@@ -1132,7 +1132,7 @@ module Gmo
       #   commodity: "",
       #   account_timing_kbn: "",
       #   account_timing: "",
-      #   first_account_data: "",
+      #   first_account_date: "",
       #   ret_url: "",
       #   payment_term_sec:  30
       #   service_name: "campfire",
