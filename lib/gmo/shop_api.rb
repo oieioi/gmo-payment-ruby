@@ -1141,9 +1141,12 @@ module Gmo
       # {"AccessID"=>"", "AccessPass"=>"", "StartURL" => "", "StartLimitDate"=> "", "ErrCode" => "", "ErrInfo" => ""}
       def exec_tran_continuance_au(options = {})
         name = "ExecTranAuContinuance.idPass"
-        required = [:access_id, :access_pass, :order_id, :commodity, :ret_url, :service_name, :service_tel]
+        required = [:access_id, :access_pass, :order_id, :commodity, :ret_url, :service_name, :service_tel, :first_account_date, :account_timing_kbn]
         if options[:site_id].present?
           required |= [:site_id, :site_pass, :member_id, :create_member]
+        end
+        if options[:account_timing_kbn] == '01'
+          required |= [:account_timing]
         end
         assert_required_options(required, options)
         post_request name, options
